@@ -1,0 +1,25 @@
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    height: 20vh;
+    width: 20vh;
+    border: 2%;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+  }
+  
+  .numberTopic {
+    text-align: center;
+  }
+  
+  .meaning,
+  .linkedEvent {
+    margin-left: 5vh;
+  }
+  

@@ -1,0 +1,35 @@
+.AddFav {
+  background-color: white;
+  border: "black";
+  color: black;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.7rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik";
+  border-radius: 30px;
+  margin-left: 16rem;
+}
+
+.AddFav:hover {
+  background-color: red;
+  border: red;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.7rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik";
+  border-radius: 30px;
+  margin-left: 16rem;
+}
