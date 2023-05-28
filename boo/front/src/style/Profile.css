@@ -1,7 +1,7 @@
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.bodyProfile {
+  height: 100vh;
+  padding-top: 10vh;
+  background-color: #addce4;
 }
 .profileTopic {
   justify-content: center;
@@ -10,9 +10,6 @@ body {
 }
 .centeredContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
   margin-top: 50px;
 }
 
@@ -56,22 +53,130 @@ body {
   margin-bottom: 10px;
   font-family: "Roboto Mono", monospace;
 }
-.buttonEdit,
-.buttonLogout {
-  background-color: black;
-  border: none;
+
+.buttonEdit {
+  background-color: rgb(72, 72, 216);
+  border: 2px solid black;
+  border-radius: 15px;
   color: white;
-  padding: 10px 25px;
+  padding: 10px 30px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 0.9rem;
-  margin: 4px 2px;
+  font-size: 1rem;
   cursor: pointer;
   align-items: center;
-  font-family: "Rubik", sans-serif;
-  margin-left: 10px;
+  justify-content: center;
+  font-family: "Rubik";
 }
+.buttonEdit:hover {
+  background-color: rgb(27, 27, 172);
+  border: 2px solid black;
+  border-radius: 15px;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik";
+}
+.buttonLogout {
+  background-color: rgb(219, 94, 94);
+  border: 2px solid black;
+  border-radius: 15px;
+
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik";
+}
+.buttonLogout:hover {
+  background-color: rgb(248, 59, 59);
+  border: 2px solid black;
+  border-radius: 15px;
+
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik";
+}
+
+.buttonProfileCancel {
+  background-color: rgb(235, 235, 235);
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik";
+}
+.buttonProfileCancel:hover {
+  background-color: rgb(207, 207, 207);
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik";
+}
+/*  */
+.buttonProfileLogout {
+  background-color: rgb(219, 94, 94);
+  border: 2px solid black;
+  border-radius: 10px;
+
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik";
+}
+.buttonProfileLogout:hover {
+  background-color: rgb(248, 59, 59);
+  border: 2px solid black;
+  border-radius: 10px;
+
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik";
+}
+
 @media screen and (max-width: 480px) {
   .containerLargest {
     width: 90%;

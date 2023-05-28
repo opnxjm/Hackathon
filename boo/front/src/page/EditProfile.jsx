@@ -87,13 +87,12 @@ function EditProfile() {
   return (
     <div>
       <NavBar />
-      <Box sx={{ height: "50px" }}></Box>
-      <div className="body">
+      <div className="bodyEditPro">
         <Typography
           className="profileTopic"
           component="h1"
           variant="h4"
-          sx={{ fontFamily: "Rubik" }}
+          sx={{ fontFamily: "Rubik", color: "black" }}
         >
           Edit Profile
         </Typography>
@@ -136,49 +135,20 @@ function EditProfile() {
               </form>
             </div>
             <div className="ButtonContainer">
-              <Button
-                className="buttonEdit"
+              <button
+                className="buttonEditEdit"
                 onClick={handleCancel}
-                style={{
-                  backgroundColor: "black",
-                  border: "none",
-                  color: "white",
-                  padding: "10px 20px",
-                  textAlign: "center",
-                  textDecoration: "none",
-                  display: "inline-block",
-                  fontSize: "1rem",
-                  margin: "4px 2px",
-                  cursor: "pointer",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontFamily: "Rubik",
-                }}
+                style={{ marginRight: "5rem" }}
               >
                 Cancel
-              </Button>
-              <Button
-                className="buttonLogout"
+              </button>
+              <button
+                className="buttonLogoutOut"
                 onClick={handleSave}
-                style={{
-                  backgroundColor: "black",
-                  border: "none",
-                  color: "white",
-                  padding: "10px 20px",
-                  textAlign: "center",
-                  textDecoration: "none",
-                  display: "inline-block",
-                  fontSize: "1rem",
-                  margin: "4px 2px",
-                  cursor: "pointer",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontFamily: "Rubik",
-                  marginLeft: "15vh",
-                }}
+                style={{ marginLeft: "5rem" }}
               >
                 Save
-              </Button>
+              </button>
             </div>
           </div>
         </div>

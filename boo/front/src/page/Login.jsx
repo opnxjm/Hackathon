@@ -28,7 +28,7 @@ function LoginPage() {
       if (response.data.success) {
         // Redirect to the desired page
         console.log(response.data.user.userId);
-        document.cookie = "userId="+response.data.user.userId;
+        document.cookie = "userId=" + response.data.user.userId;
         navigate("/lotto");
       } else {
         setError(response.data.message);
@@ -42,8 +42,9 @@ function LoginPage() {
   return (
     <div
       style={{
-        backgroundImage:
-          "url(https://images.unsplash.com/photo-1564399580075-5dfe19c205f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80)",
+        backgroundImage: "url(../PheeNoi.png)",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
         backgroundSize: "cover",
         height: "100vh",
         display: "flex",
@@ -104,7 +105,7 @@ function LoginPage() {
               variant="contained"
               sx={{ mt: 3, mb: 2, fontFamily: "Rubik" }}
               style={{
-                backgroundColor: "black",
+                backgroundColor: "#0A1931",
                 border: "none",
                 color: "white",
                 textAlign: "center",

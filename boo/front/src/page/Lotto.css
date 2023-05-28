@@ -1,3 +1,7 @@
+.allPage {
+  height: 100vh;
+  background-color: #0d63a5;
+}
 .AddFav {
   background-color: white;
   border: "black";
@@ -32,4 +36,38 @@
   font-family: "Rubik";
   border-radius: 30px;
   margin-left: 16rem;
+}
+
+
+.randomButton{
+  background-color: #0A1931;
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: Rubik;
+  border-radius: 10px;
+}
+
+.randomButton:hover{
+  background-color: #F6F1E9;
+  border: none;
+  color: black;
+  padding: 15px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: Rubik;
 }

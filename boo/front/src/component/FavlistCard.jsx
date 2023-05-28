@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
@@ -8,7 +8,8 @@ import { Delete } from "@mui/icons-material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Button } from "@mui/material";
 import { red } from "@mui/material/colors";
-
+import axios from "axios";
+import getCookie from "../util/getCookie";
 import "./FavlistCard.css";
 
 const Img = styled("img")({
@@ -36,16 +37,19 @@ const TypographyWrap = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(1),
 }));
 
-function FavlistCard({
-  user_id,
-  lotto_id,
-  lottoNumber,
-  meaning,
-  event,
-  onDelete,
-}) {
-  const handleDelete = () => {
-    onDelete(user_id, lotto_id);
+function FavlistCard({ user_id, lotto_id, lottoNumber, meaning, event }) {
+  const userId = getCookie("userId");
+  const handleDelete = async () => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:8888/deleteFav/${userId}/${lotto_id}`
+      );
+      console.log(response.data);
+      // Handle success or display a success message
+    } catch (error) {
+      console.error(error);
+      // Handle error or display an error message
+    }
   };
 
   return (

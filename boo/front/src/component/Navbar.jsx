@@ -11,16 +11,14 @@ import { useNavigate } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function NavBar() {
-    let navigate = useNavigate();
-          const handleClick = (destination) => {
-              navigate(destination);
-          }
-
-  
+  let navigate = useNavigate();
+  const handleClick = (destination) => {
+    navigate(destination);
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "#F2F0E7" }}>
+      <AppBar position="fixed" sx={{ backgroundColor: "#FFD717" }}>
         <Toolbar>
           <Typography
             variant="h5"
@@ -30,18 +28,19 @@ export default function NavBar() {
               color: "black",
               fontFamily: "Scope One",
               cursor: "pointer",
-              fontFamily: 'Rubik',
+              fontFamily: "Rubik",
             }}
-
             onClick={() => handleClick("/lotto")}
           >
-            BOO!
+            
+            <img src="../logo.png" style={{width:"30px"}}></img>
+            LottoBoo!
           </Typography>
 
           <IconButton onClick={() => handleClick("/favorite")}>
             <FavoriteIcon />
           </IconButton>
-          <IconButton>
+          <IconButton onClick={() => handleClick("/profile")}>
             <AccountCircleIcon />
           </IconButton>
         </Toolbar>

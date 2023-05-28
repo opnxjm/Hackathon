@@ -19,7 +19,7 @@ const style = {
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
-  height: "250px",
+  height: "300px",
   border: "solid 1px transparent",
   borderRadius: "20px",
 };
@@ -41,8 +41,8 @@ function Lotto() {
         userId: getCookie("userId"),
         lottoId: lottoData.lottoId,
       });
-        console.log("success");
-      
+      console.log("success");
+      handleClose();
     } catch (error) {
       // Handle network or server error
       console.error("Error fav:", error);
@@ -80,7 +80,7 @@ function Lotto() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div className="allPage">
+    <Box className="allPage">
       <NavBar />
       <Box sx={{ height: "100px" }}></Box>
       <Grid
@@ -92,31 +92,14 @@ function Lotto() {
       >
         <Grid item md={6}>
           <Box className="ghostImage">
-            <img src="../ghost.png" alt="little ghost"></img>
+            <img style={{width:"30vw"}} src="../ghost.png" alt="little ghost"></img>
           </Box>
         </Grid>
         <Grid item md={6}>
           <div>
-            <Button
-              style={{
-                backgroundColor: "black",
-                border: "none",
-                color: "white",
-                padding: "15px 40px",
-                textAlign: "center",
-                textDecoration: "none",
-                display: "inline-block",
-                fontSize: "1rem",
-                margin: "4px 2px",
-                cursor: "pointer",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "Rubik",
-              }}
-              onClick={handleOpen}
-            >
+            <button className="randomButton" onClick={handleOpen}>
               Random
-            </Button>
+            </button>
             <Modal
               open={open}
               onClose={handleClose}
@@ -167,7 +150,7 @@ function Lotto() {
           </div>
         </Grid>
       </Grid>
-    </div>
+    </Box>
   );
 }
 

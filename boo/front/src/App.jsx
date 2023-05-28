@@ -12,6 +12,8 @@ import NumberLottoCard from "./component/NumberLottoCard";
 import Profile from "./page/Profile";
 import EditProfile from "./page/EditProfile";
 import Favlist from "./page/Favlist";
+import Error from "./page/Error";
+import "./App.css";
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/editprofile" element={<EditProfile />} />
         <Route path="/favorite" element={<Favlist />} />
+        <Route path="/error" element={<Error/>} />
       </Routes>
     </BrowserRouter>
 

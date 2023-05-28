@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Opening from "../assets/Open.gif";
+import "../style/Welcome.css";
 
 function Welcome() {
   //for route "Let's Explore button" => login page
@@ -12,14 +14,25 @@ function Welcome() {
     justifyContent: "center",
     textAlign: "center",
     fontSize: 20,
-    marginTop: "10vh",
-    fontFamily: 'Rubik',
+    paddingTop: "30px",
+    fontFamily: "Rubik",
   };
 
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh",
+        backgroundColor: "#0D63A5",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img src={Opening} style={{ width: "18%" }} />
+
       <Box sx={topicStyle}>
-        <h1>Boo!</h1>
+        <h1>Welcom to LottoBoo!</h1>
       </Box>
       <div
         style={{
@@ -27,28 +40,16 @@ function Welcome() {
           padding: "30px",
           borderRadius: "10px",
           textAlign: "center",
-          fontFamily: 'Rubik',
+          fontFamily: "Rubik",
         }}
+      ></div>
+      <button
+        className="letsgetstart"
+        sx={{ fontFamily: "Rubik" }}
+        onClick={() => handleClick("/login")}
       >
-        <button
-          style={{
-            backgroundColor: "black",
-            border: "none",
-            color: "white",
-            padding: "15px 40px",
-            textAlign: "center",
-            textDecoration: "none",
-            display: "inline-block",
-            fontSize: "16px",
-            margin: "4px 2px",
-            cursor: "pointer",
-          }}
-          sx={{ fontFamily: 'Rubik' }}
-          onClick={() => handleClick("/login")}
-        >
-          Let's Start !
-        </button>
-      </div>
+        Let's Start !
+      </button>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import NavBar from "../component/Navbar";
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
@@ -10,13 +10,29 @@ import { useNavigate } from "react-router-dom";
 import "../style/Profile.css";
 import axios from "axios";
 import getCookie from "../util/getCookie";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import { useEffect } from "react";
 
 function Profile(params) {
   let navigate = useNavigate();
   const handleClick = (destination) => {
+    if (destination === "/") {
+      // Clear all cookies
+      document.cookie.split(";").forEach((c) => {
+        document.cookie = c
+          .replace(/^ +/, "")
+          .replace(/=.*/, `=;expires=${new Date().toUTCString()};path=/`);
+      });
+    }
     navigate(destination);
   };
   const [userData, setUserData] = useState([]);
+  const [logoutModalOpen, setLogoutModalOpen] = useState(false);
 
   const fetchUser = async (e) => {
     try {
@@ -36,15 +52,25 @@ function Profile(params) {
       console.error("Error fetching user data:", error);
     }
   };
+
+  const handleOpenLogoutModal = () => {
+    setLogoutModalOpen(true);
+  };
+
+  const handleCloseLogoutModal = () => {
+    setLogoutModalOpen(false);
+  };
+
   useEffect(() => {
     // Fetch lotto data when the component mounts
     fetchUser();
   }, []);
+
   return (
     <div>
       <NavBar />
-      <Box sx={{ height: "50px" }}></Box>
-      <div className="body">
+      <Box sx={{ height: "50px", backgroundColor: "#ADDCE4" }}></Box>
+      <div className="bodyProfile">
         <Typography
           className="profileTopic"
           component="h1"
@@ -57,62 +83,62 @@ function Profile(params) {
           <div className="containerLargest">
             <div className="profileContainer">
               <h5 className="profileInfoTopic">Username</h5>
-              <Typography>{userData.username}</Typography>
+              <Typography sx={{ fontFamily: "Roboto Mono" }}>
+                {userData.username}
+              </Typography>
               <br />
               <h5 className="profileInfoTopic">Email</h5>
-              <Typography>{userData.email}</Typography>
+              <Typography sx={{ fontFamily: "Roboto Mono" }}>
+                {userData.email}
+              </Typography>
               <br />
               <h5 className="profileInfoTopic">Bio</h5>
-              <Typography>{userData.bio}</Typography>
+              <Typography sx={{ fontFamily: "Roboto Mono" }}>
+                {userData.bio}
+              </Typography>
               <br />
             </div>
             <div className="ButtonContainer">
-              <Button
+              <button
                 className="buttonEdit"
-                style={{
-                  backgroundColor: "black",
-                  border: "none",
-                  color: "white",
-                  padding: "10px 20px",
-                  textAlign: "center",
-                  textDecoration: "none",
-                  display: "inline-block",
-                  fontSize: "1rem",
-                  margin: "4px 2px",
-                  cursor: "pointer",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontFamily: "Rubik",
-                }}
                 onClick={() => handleClick("/editprofile")}
+                style={{ marginRight: "5rem" }}
               >
                 Edit
-              </Button>
-              <Button
+              </button>
+              <button
                 className="buttonLogout"
-                style={{
-                  backgroundColor: "black",
-                  border: "none",
-                  color: "white",
-                  padding: "10px 20px",
-                  textAlign: "center",
-                  textDecoration: "none",
-                  display: "inline-block",
-                  fontSize: "1rem",
-                  margin: "4px 2px",
-                  cursor: "pointer",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontFamily: "Rubik",
-                  marginLeft: "15vh",
-                }}
+                onClick={handleOpenLogoutModal}
+                style={{ marginLeft: "5rem" }}
               >
                 Logout
-              </Button>
+              </button>
             </div>
           </div>
         </div>
       </div>
+      <Dialog open={logoutModalOpen} onClose={handleCloseLogoutModal}>
+        <DialogTitle sx={{ fontFamily: "Rubik", fontWeight: "800" }}>
+          Do you want to logout ?
+        </DialogTitle>
+        <DialogActions>
+          <div>
+            <button
+              className="buttonProfileCancel"
+              onClick={handleCloseLogoutModal}
+            >
+              Cancel
+            </button>
+            <button
+              style={{ marginLeft: "50px" }}
+              className="buttonProfileLogout"
+              onClick={() => handleClick("/")}
+            >
+              Logout
+            </button>
+          </div>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }
