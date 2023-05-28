@@ -1,7 +1,6 @@
-.bodyFavlist{
-    height: 100%;
+.bodyFavlist {
+  height: 100vh;
   margin: 0;
   padding-top: 6vh;
   background-color: #addce4;
-
 }
