@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import axios from "axios";
+import getCookie from "../util/getCookie";
 
 const style = {
   position: "absolute",
@@ -30,16 +31,24 @@ function Lotto() {
   const [loading, setLoading] = useState(true);
   const lotto = counter;
 
-
   useEffect(() => {
     // Fetch lotto data when the component mounts
     fetchLottoData();
   }, [open]);
-  // const handleAdd = async () => {
-  //   try{
-  //     const response = await axios.post(`http://localhost:8888/`)
-  //   }
-  // }
+  const handleAdd = async () => {
+    try {
+      const response = await axios.post(`http://localhost:8888/addFav`, {
+        userId: getCookie("userId"),
+        lottoId: lottoData.lottoId,
+      });
+        console.log("success");
+      
+    } catch (error) {
+      // Handle network or server error
+      console.error("Error fav:", error);
+    }
+  };
+  console.log(getCookie("userId"));
   const fetchLottoData = async () => {
     // setCounter(Math.round(Math.random() * 100));
     try {
@@ -53,7 +62,7 @@ function Lotto() {
         console.log(lottoData);
       } else {
         // Handle error response
-        // console.log(response.data.message);
+        console.log(response.data.message);
       }
     } catch (error) {
       // Handle network or server error
@@ -142,6 +151,7 @@ function Lotto() {
                     </p>
                     <br />
                     <button
+                      onClick={handleAdd}
                       className="AddFav"
                       style={{
                         position: "fixed",

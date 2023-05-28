@@ -9,6 +9,8 @@ import RegisterPage from "./page/Register";
 import LoginPage from "./page/Login";
 import Lotto from "./page/Lotto";
 import NumberLottoCard from "./component/NumberLottoCard";
+import Profile from "./page/Profile";
+import EditProfile from "./page/EditProfile";
 import Favlist from "./page/Favlist";
 
 function App() {
@@ -20,7 +22,9 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/lotto" element={<Lotto />} />
         <Route path="/favorite" element={<Favlist />} />
-
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/editprofile" element={<EditProfile />} />
+        <Route path="/favorite" element={<Favlist />} />
       </Routes>
     </BrowserRouter>
 

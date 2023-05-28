@@ -27,6 +27,8 @@ function LoginPage() {
       // Successful login
       if (response.data.success) {
         // Redirect to the desired page
+        console.log(response.data.user.userId);
+        document.cookie = "userId="+response.data.user.userId;
         navigate("/lotto");
       } else {
         setError(response.data.message);
