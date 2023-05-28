@@ -7,7 +7,7 @@ module.exports = (connection) => {
     connection.query(
       "SELECT * FROM lotto WHERE lottoId = ?",
       [lottoId],
-      (err, res) => {
+      (err, result) => {
         if (err) {
           console.log(err);
           res.status(500).send("Error retrieving lotto id");
@@ -17,10 +17,9 @@ module.exports = (connection) => {
           res.json({
             success: true,
             message: "Found",
-            lotto: result,
-          });
-        }
-      }
+            lotto: result
+        })
+        }}
     );
   });
   return router;

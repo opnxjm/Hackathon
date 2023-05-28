@@ -3,7 +3,7 @@ const router = express.Router();
 
 module.exports = (connection) => {
     router.post("/addFav", async (req, res) => {
-        const userId = req.userId;
+        const userId = req.body.userId;
         const lottoId = req.body.lottoId;
         connection.query(
             "INSERT INTO userLotto (user_id, lotto_id) VALUES (?, ?)", 
