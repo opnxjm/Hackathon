@@ -118,10 +118,10 @@ function LoginPage() {
               Log In
             </Button>
             <Grid container>
-              <Grid item>
+              <Grid item sx={{fontFamily: 'Rubik'}}>
                 Don't have an account?
                 <Link to="/lotto" href="/register" variant="body2">
-                  Sign Up
+                  {"  "}Sign Up
                 </Link>
               </Grid>
             </Grid>

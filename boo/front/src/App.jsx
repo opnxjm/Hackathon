@@ -27,7 +27,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/editprofile" element={<EditProfile />} />
         <Route path="/favorite" element={<Favlist />} />
-        <Route path="/error" element={<Error/>} />
+        <Route path="/*" element={<Error />} />
       </Routes>
     </BrowserRouter>
 
